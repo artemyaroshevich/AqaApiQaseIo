@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        gradle "7.1"
+        gradle
     }
     parameters {
         gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type:
