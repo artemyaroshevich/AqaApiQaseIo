@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: "${params.BRANCH}", url: 'https://github.com/artemyaroshevich/AqaApiQaseIo'
+                git branch: "*/master", url: 'https://github.com/artemyaroshevich/AqaApiQaseIo'
 
                 // Run Maven on a Unix agent.
                 sh "gradle build"
@@ -25,7 +25,7 @@ pipeline {
                                 jdk: '',
                                 properties: [],
                                 reportBuildPolicy: 'ALWAYS',
-                                results: [[path: 'target/allure-results']]
+                                results: [[path: 'build/allure-results']]
                         ])
                     }
                 }
