@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: "*/master", url: 'https://github.com/artemyaroshevich/AqaApiQaseIo'
+                git branch: "origin/master", url: 'https://github.com/artemyaroshevich/AqaApiQaseIo'
 
                 // Run Maven on a Unix agent.
                 sh "gradle build"
