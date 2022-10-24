@@ -18,7 +18,7 @@ pipeline {
 
             post {
                 success {
-                    junit 'build/test-results/test/binary/TEST-*.xml'
+                    junit './build/test-results/test/binary/TEST-*.xml'
                 }
                 always {
                     script {
