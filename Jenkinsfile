@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    triggers {
+        cron(*/5 * * * *)
+    }
     tools {
         gradle "7.1.1"
     }
@@ -11,6 +15,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh "gradle build"
+
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn clean test -Dheadless=${HEADLESS}"
